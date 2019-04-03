@@ -59,5 +59,13 @@ public class CoreService {
 	private boolean IsAccountBlocked(Account account) {
 		return account.getIsBlocked();
 	}
+	
+	// Implemented a method to get an account and a value
+	public TransferStatus Deposit(double amount,  Account account) {
+    
+		double newBalanace = account.getBalance()+amount;
+		account.setBalance(newBalanace);
+		return TransferStatus.Valid;
+	}
 		
 }
